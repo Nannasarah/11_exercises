@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: beige;
+  vertical-align: center;
+  padding: 40px;
+  height: 100%;
+  vertical-align: center;
+}
+.tilfaeldigt {
+  padding: 20px;
+  background-color: white;
+  border-radius: 25px;
+  text-align: center;
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+.gaet {
+  padding: 20px;
+  background-color: white;
+  border-radius: 25px;
+  text-align: center;
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+@media screen and (min-width: 1000px) {
+  body {
+    margin-inline: 30%;
+    background-color: beige;
+    height: 100%;
+  }
+}
