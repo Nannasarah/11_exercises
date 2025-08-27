@@ -6,6 +6,9 @@ const paperBtn = document.querySelector(".paper");
 const scissorsBtn = document.querySelector(".scissors");
 const player1 = document.querySelector("#player1");
 const player2 = document.querySelector("#player2");
+const winText = document.querySelector("#win");
+const loseText = document.querySelector("#lose");
+const drawText = document.querySelector("#draw");
 
 addEventlistenersToButtons();
 function addEventlistenersToButtons() {
@@ -47,8 +50,50 @@ function computerGuess() {
 function animationStarter() {
   player1.classList.add("shake");
   player2.classList.add("shake");
+
+  // Når animationen er færdig, kaldes animationEnd()
+  player1.addEventListener("animationend", animationEnd);
+  player2.addEventListener("animationend", animationEnd);
 }
-//evalution af resultatet
-function animationEnd() {}
+
+// Når animationen slutter
+function animationEnd() {
+  player1.classList.remove("shake");
+  player2.classList.remove("shake");
+
+  // Viser de rigtige hænder
+  player1.classList.remove("rock", "paper", "scissors");
+  player2.classList.remove("rock", "paper", "scissors");
+  player1.classList.add(userChoice);
+  player2.classList.add(computerChoice);
+
+  showResultScreen();
+}
+
 //resultatsskærm bliver vist
-function showResultScreen() {}
+function showResultScreen() {
+  // Skjuler tekst først
+  winText.classList.add("hidden");
+  loseText.classList.add("hidden");
+  drawText.classList.add("hidden");
+
+  if (userChoice === computerChoice) {
+    drawText.classList.remove("hidden");
+  }
+  // Sten slår saks
+  else if (userChoice === "rock" && computerChoice === "scissors") {
+    winText.classList.remove("hidden");
+  }
+  // Saks slår papir
+  else if (userChoice === "scissors" && computerChoice === "paper") {
+    winText.classList.remove("hidden");
+  }
+  // Papir slår sten
+  else if (userChoice === "paper" && computerChoice === "rock") {
+    winText.classList.remove("hidden");
+  }
+  // computeren vinder
+  else {
+    loseText.classList.remove("hidden");
+  }
+}
