@@ -19,6 +19,11 @@ console.log("siden vises");
 
 function sidenvises() {
   document.querySelector("#start").addEventListener("click", clickStart);
+  //Nednfor gør jeg at man ikke kan trykke på knapperne før man har trykket start.
+  document.querySelector("#hoej").disabled = true;
+  document.querySelector("#lav").disabled = true;
+  document.querySelector("#right").disabled = true;
+  document.querySelector("#start").disabled = false;
 }
 
 function clickStart() {
@@ -28,7 +33,14 @@ function clickStart() {
   mid = 50;
   computerChoice = mid;
   //Her skriver den ud i console hvad computeren har valgt
+
   console.log("computerChoice", computerChoice);
+  //Her gør jeg at start knappen ikke kan trykkes på, men nu kan man trykke på de ande
+  document.querySelector("#start").disabled = true;
+  document.querySelector("#hoej").disabled = false;
+  document.querySelector("#lav").disabled = false;
+  document.querySelector("#right").disabled = false;
+
   visGaet();
 }
 
@@ -36,7 +48,7 @@ function visGaet() {
   computerChoice = Math.floor((min + max) / 2);
   console.log("computerChoice", computerChoice);
 
-  h2.textContent = `jeg gætter på ${computerChoice}`;
+  h2.textContent = `Jeg gætter på ${computerChoice}`;
 }
 
 //Alle knapper får en funktion
@@ -53,12 +65,13 @@ function lavKlik() {
   clickStart();
 }
 function rightKlik() {
-  computerChoice === userChoice;
   console.log("rigtigt");
+
+  h3.textContent = "Rigtigt!";
   reset();
-  h2.textContent = "du gættede rigtigt!";
 }
 
 function reset() {
   computerChoice = 0;
+  sidenvises();
 }

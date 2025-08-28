@@ -1,0 +1,26 @@
+body {
+  padding: 20%;
+}
+.knapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+button {
+  margin: 10px;
+  padding: 10px;
+  background-color: lightblue;
+  border-radius: 15px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: rgb(106, 137, 147);
+  color: white;
+}
+h2 {
+  text-align: center;
+}
+h3 {
+  color: green;
+  text-align: center;
+}
