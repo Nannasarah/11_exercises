@@ -5,6 +5,7 @@ const hoejBtn = document.querySelector("#hoej");
 const lavBtn = document.querySelector("#lav");
 const rightBtn = document.querySelector("#right");
 const startBtn = document.querySelector("#start");
+const h3 = document.querySelector("#h3");
 
 hoejBtn.addEventListener("click", hoejKlik);
 lavBtn.addEventListener("click", lavKlik);
@@ -32,6 +33,10 @@ function clickStart() {
   const max = 100;
   mid = 50;
   computerChoice = mid;
+
+  //nedenfor gemmer den h3 der siger "rigtigt"
+  h3.hidden = true;
+
   //Her skriver den ud i console hvad computeren har valgt
 
   console.log("computerChoice", computerChoice);
@@ -66,12 +71,15 @@ function lavKlik() {
 }
 function rightKlik() {
   console.log("rigtigt");
-
   h3.textContent = "Rigtigt!";
+  //den fjerner hidden på h3 så man kan se "rigtigt"
+  h3.hidden = false;
   reset();
 }
 
 function reset() {
   computerChoice = 0;
+  min = 0;
+  max = 101;
   sidenvises();
 }
