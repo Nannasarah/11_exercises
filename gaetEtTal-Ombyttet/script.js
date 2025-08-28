@@ -56,7 +56,7 @@ function rightKlik() {
   computerChoice === userChoice;
   console.log("rigtigt");
   reset();
-  h2.textContent = "Jeg gættede rigtigt!";
+  h2.textContent = "du gættede rigtigt!";
 }
 
 function reset() {
