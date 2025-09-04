@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.ovest {
+  background-color: rgb(199, 199, 243);
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+header {
+  font-size: 50px;
+  padding-left: 10%;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+label {
+  font-size: 14px;
+  margin-left: 20px;
+  padding-top: 10%;
+}
+.footer {
+  background-color: rgb(43, 43, 68);
+  font-size: 20px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  padding-left: 10%;
+  color: white;
+}
+p {
+  height: 580px;
+  background: linear-gradient(rgb(199, 199, 243), rgb(43, 43, 68));
+  padding-inline: 8%;
+  padding-top: 20px;
+}
