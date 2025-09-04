@@ -14,17 +14,35 @@ const vehicles = [
 const tbodyPointer = document.querySelector("tbody");
 showTheseVehicles(vehicles);
 
+function undefinedText(value) {
+  if (value) {
+    return value;
+  } else {
+    return "-";
+  }
+}
+
+function trueFalseText(value) {
+  if (value === true) {
+    return "yes";
+  } else if (value === false) {
+    return "No";
+  } else {
+    return "-";
+  }
+}
+
 function showTheseVehicles(arr) {
   tbodyPointer.innerHTML = ""; // rydder tabellen så den kun viser det propertie der bliver kaldt
   arr.forEach((each) => {
     tbodyPointer.innerHTML += `<tr>
-      <td>${each.type}</td>
-      <td>${each.fuel}</td>
-      <td>${each.passengers}</td> 
-      <td>${each.stops}</td>
-      <td>${each.ownedBy}</td>
-      <td>${each.isElectric}</td>
-      <td>${each.isTandem}</td>
+      <td>${undefinedText(each.type)}</td>
+      <td>${undefinedText(each.fuel)}</td>
+      <td>${undefinedText(each.passengers)}</td> 
+      <td>${undefinedText(each.stops)}</td>
+      <td>${undefinedText(each.ownedBy)}</td>
+      <td>${trueFalseText(each.isElectric)}</td>
+      <td>${trueFalseText(each.isTandem)}</td>
     </tr>`;
   });
 }
