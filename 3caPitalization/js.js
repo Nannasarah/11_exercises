@@ -11,3 +11,4 @@ const tredjeBogstavStort =
   str.slice(3); //na
 
 console.log(tredjeBogstavStort);
+
