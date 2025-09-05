@@ -11,17 +11,20 @@ document.querySelector("button").addEventListener("click", click);
 
 function click() {
   let text = p.innerHTML;
-  let foundBadWord = false;
-
+  let foundBadWord = false; // Bliver true, hvis vi finder et forbudt ord
+  // Gennemgår hvert ord i curseWords-listen
   curseWords.forEach((word) => {
     if (text.includes(word.bad)) {
-      foundBadWord = true;
+      foundBadWord = true; // Erstatter alle forekomster med den "gode" version
+      //pakker det ind i en <span class="highlight"> så vi kan style det i CSS
       text = text.replaceAll(word.bad, `<span class="highlight">${word.good}</span>`);
     }
   });
+  // Hvis vi fandt mindst ét forbudt ord, opdaterer vi teksten i <p>
   if (foundBadWord) {
     p.innerHTML = text;
   } else {
+    // Hvis teksten allerede er good viser vi en besked
     alert("Det er allerede Safe For Work");
   }
 }
