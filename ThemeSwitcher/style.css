@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /*light tema*/
+  --baggrund-light: #ffffff;
+  --text-light: #2d1111;
+  --header-light: #eeeed5;
+  --footer-light: #eaeaac;
+  --headline-light: #7d2c2c;
+  /*dark tema*/
+  --baggrund-dark: #1f1f1f;
+  --text-dark: #ffffff;
+  --header-dark: #262626;
+  --footer-dark: #000000;
+  --headline-dark: #4b5b47;
+  /*pink tema*/
+  --baggrund-pink: #f9a2ca;
+  --text-pink: #ce007c;
+  --header-pink: #ff66bf;
+  --footer-pink: #8f0962;
+  --headline-pink: #ffe2f4;
+}
+
+/* Light */
+[data-theme="light"] {
+  background-color: var(--baggrund-light);
+  color: var(--text-light);
+}
+[data-theme="light"] header {
+  background-color: var(--header-light);
+  color: var(--headline-light);
+}
+[data-theme="light"] footer {
+  background-color: var(--footer-light);
+}
+
+/* Dark */
+[data-theme="dark"] {
+  background-color: var(--baggrund-dark);
+  color: var(--text-dark);
+}
+[data-theme="dark"] header {
+  background-color: var(--header-dark);
+  color: var(--headline-dark);
+}
+[data-theme="dark"] footer {
+  background-color: var(--footer-dark);
+}
+
+/* pink */
+[data-theme="pp"] {
+  background-color: var(--baggrund-pink);
+  color: var(--text-pink);
+}
+[data-theme="pp"] header {
+  background-color: var(--header-pink);
+  color: var(--headline-pink);
+}
+[data-theme="pp"] footer {
+  background-color: var(--footer-pink);
+}
+
+body {
+  height: 100vh;
+}
+header {
+  height: 130px;
+  font-size: 2rem;
+  padding-bottom: 20px;
+}
+h1 {
+  padding-left: 5%;
+}
+p {
+  padding-left: 5%;
+}
+label {
+  font-size: 1rem;
+  padding-left: 1%;
+}
+main {
+  height: 70%;
+}
+footer {
+  height: 20%;
+}
