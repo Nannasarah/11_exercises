@@ -3,6 +3,7 @@
 window.addEventListener("DOMContentLoaded", start);
 
 let allAnimals = [];
+import { addStars } from "./animalstars.js"; //henter stjernerne fra den anden fil som gør dem klikbare.
 
 // The prototype for all animals:
 const Animal = {
@@ -149,6 +150,9 @@ function displayList(animals) {
 
   // build a new list
   animals.forEach(displayAnimal);
+
+  // tilføj stjerner efter listen er bygget
+  addStars(allAnimals);
 }
 
 function displayAnimal(animal) {
