@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0px;
+  box-sizing: border-box;
+}
+button {
+  position: relative;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  overflow: hidden;
+}
+body {
+  padding: 40px;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-end; /*placerer vandret i højre*/
+  align-items: flex-end; /*placerer lodret i bunden*/
+}
+p {
+  position: relative;
+  z-index: 2;
+}
+
+/* selve “fyld op” elementet */
+.progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background: #f51010;
+}
+
+/* klasse vi tilføjer for at starte animationen */
+.progress.animate {
+  animation: fillBar 5s linear forwards;
+}
+
+@keyframes fillBar {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
