@@ -1,0 +1,150 @@
+/* Mørk baggrund på hele siden */
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: "Courier New", monospace;
+  background-color: #271c14; /* mørk baggrund */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  color: #f0f0f0;
+}
+
+/* Container for todo + done */
+#containere {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 900px;
+  justify-content: center;
+}
+
+/* Hver liste som "notespapir" */
+#containere > div {
+  background-color: #fff9e6; /* lys notesblok-farve */
+  color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border-left: 5px solid #e0d7c6; /* rød kant som notesblok-streg */
+}
+
+/* Overskrifter */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+}
+
+/* Input + knap container */
+.submitcontainer {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* Inputfelt med kun bundstreg */
+#todo_name_input {
+  flex: 1;
+  padding: 10px 5px;
+  font-size: 16px;
+  border: none;
+  border-bottom: 2px solid #223925; /* kun bundstreg */
+  outline: none;
+  background-color: transparent;
+  color: #333;
+}
+
+/* Knap */
+#submit {
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #547a59;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#submit:hover {
+  background-color: #223925;
+  font-size: 18px;
+}
+
+/* Lister */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Li-elementer */
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  background-color: #fff5e6; /* notesblok baggrund */
+  border-bottom: 1px solid #e0d7c6; /* linje under hvert punkt */
+  border-radius: 5px;
+}
+
+/* Checkbox */
+li input[type="checkbox"] {
+  margin-right: 10px;
+}
+/* Større checkbox */
+li input[type="checkbox"] {
+  width: 25px; /* bredde */
+  height: 25px; /* højde */
+  accent-color: #053814; /* farven på fluebenet */
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+/* Slet-knap */
+li .delete-btn {
+  background-color: #f47c36;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 8px;
+  cursor: pointer;
+}
+
+li .delete-btn:hover {
+  background-color: #ca6124;
+}
+
+/* Responsivt */
+@media (max-width: 600px) {
+  #containere {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #containere > div {
+    width: 90%;
+  }
+
+  .submitcontainer {
+    flex-direction: column;
+  }
+
+  #submit {
+    width: 100%;
+  }
+}
